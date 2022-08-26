@@ -15,24 +15,33 @@
         <form method="GET" action="results.html">
             <div>
                 <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35">
                 <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35">
+                <label for="age">Your Age</label>
+                <span class="required-field">*</span>
+                <input type="number" name="age" id="age" min="21" max="120">
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
                     <label for="email">Your Email</label>
+                    <span class="required-field">*</span>
                     <input type="email" id="email" name="email">
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
+                    <span class="required-field">*</span>
                     <input type="text" id="address" name="address">
                 </div>
                 <div>
                     <label for="city">Your City</label>
+                    <span class="required-field">*</span>
                     <input type="text" id="city" name="city">
                     <label for="state">Your State</label>
+                    <span class="required-field">*</span>
                     <input list="state-list" id="state" name="state">
                     <datalist id="state-list">
                         <option value="AK">Alaska</option>
@@ -85,14 +94,18 @@
                         <option value="WV">West Virginia</option>
                         <option value="WY">Wyoming</option>
                     </datalist>
-                    <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <label for="">Your Zipcode</label>
+                    <span class="required-field">*</span>
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}"
+                        title="5-Digit US ZIP Code">
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend>Your Preferences</legend>
-                <h3>Choose your location</h3>
+                <h3>Choose your location
+                    <span class="required-field">*</span>
+                </h3>
                 <div>
                     <input type="radio" id="aruba" name="location" value="Aruba" checked> 
                     <label for="aruba">Aruba</label>
@@ -113,7 +126,9 @@
                     <label for="color">Favorite Color</label>
                     <input type="color" id="color" name="color">
                 </div>
-                <h3>Please select any add-ons you'd like:</h3>
+                <h3>Please select any add-ons you'd like:
+                    <span class="required-field">*</span>
+                </h3>
                 <div>
                     <input type="checkbox" id="sauna" name="extras" value="Sauna Access" checked> 
                     <label for="sauna">Sauna Access</label>
